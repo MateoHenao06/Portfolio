@@ -26,7 +26,6 @@ export const TechnicalSkills = () => {
     <div className="w-3/4 mx-auto p-4">
       <h2 className="text-2xl font-bold text-center mb-4 text-white mt-10">🚀 Mis Conocimientos</h2>
 
-      {/* Lenguajes de Programación */}
       <h3 className="text-lg font-semibold text-center mb-2 mt-10 text-white">Lenguajes de Programación</h3>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
         {skills.map((skill, index) => (
@@ -41,7 +40,6 @@ export const TechnicalSkills = () => {
         ))}
       </div>
 
-      {/* Tecnologías y Herramientas */}
       <h3 className="text-lg font-semibold text-center mb-2 text-white mt-20">Tecnologías y Herramientas</h3>
       <div className="flex flex-wrap justify-center gap-2">
         {technologies.map((tech, index) => (
@@ -56,5 +54,3 @@ export const TechnicalSkills = () => {
     </div>
   )
 }
-
-

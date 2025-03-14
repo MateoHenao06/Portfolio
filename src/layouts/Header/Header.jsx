@@ -5,8 +5,8 @@ export const Header = () => {
 
   return (
     <>
-        <header className='w-full ml-[1vw] flex justify-around items-center flex-row gap-130 bg-gray-800 text-white p-5 mt-2 rounded-2xl'>
-          <h1 className='text-xl font-bold'>Portfolio</h1>
+        <header className='bg-slate-800 w-full h-auto  flex flex-row flex-wrap justify-around items-center p-4 text-white'>
+          <h1 className='text-xl font-bold text-white'>Portfolio</h1>
           <Navbar>
             <ul className="flex flex-row gap-3 ">
               <ItemNavbar route = '/' content = 'Inicio'/>

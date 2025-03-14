@@ -2,6 +2,7 @@ import { Navbar } from "../Navbar/Navbar"
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 
 export const Footer = () => {
   return (
@@ -17,6 +18,9 @@ export const Footer = () => {
           </li>
           <li>
             <a href="https://www.instagram.com/mateo_07pp/?utm_source=qr&r=nametag"><FaInstagram className="h-8 w-8" /></a>
+          </li>
+          <li>
+            <a href="https://wa.me/573135144507"><FaWhatsapp className="h-8 w-8" /></a>
           </li>
         </ul>
       </Navbar>
