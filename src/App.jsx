@@ -1,24 +1,35 @@
-import { Routes, Route } from 'react-router-dom'
-import { Header } from './layouts/Header/Header'
-import { Main } from './layouts/Main/Main'
-import { Footer } from './layouts/Footer/Footer'
-import { SocialSkills } from './pages/SocialSkills/SocialSkills'
-import { Studies } from './pages/Studies/Studies'
-import { TechnicalSkills } from './pages/TechnicalSkills/TechnicalSkills'
+import { useState } from "react";
 
-export function App() {
-  
+// Hooks
+export const App = () => {
+  const [username, setUsername] = useState("Usuario");
+  const [inputValue, setInputValue] = useState("");
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleGreet = () => {
+    setUsername(inputValue);
+    setInputValue("");
+  };
 
   return (
-    <>
-      <Header />      
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/SocialSkills" element={<SocialSkills />} />
-        <Route path="/TechnicalSkills" element={<TechnicalSkills />} />
-        <Route path="/Studies" element={<Studies />} />
-      </Routes>
-      <Footer/>
-    </>
-  )
-}
+    <div className="w-screen h-screen flex flex-col justify-center items-center">
+      <h1>Bienvenido {username}</h1>
+      <input
+        type="text"
+        placeholder="Ingrese su nombre"
+        value={inputValue}
+        onChange={handleChange}
+        className="text-center mt-6 border p-2 rounded"
+      />
+      <button
+        onClick={handleGreet}
+        className="w-20 px-4 py-2 mt-6 bg-amber-500 text-white font-semibold rounded-lg shadow-md hover:bg-amber-600 transition-colors duration-300 cursor-pointer"
+      >
+        Saludar
+      </button>
+    </div>
+  );
+};
