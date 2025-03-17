@@ -1,35 +1,36 @@
 import { useState } from "react";
 
-// Hooks
 export const App = () => {
-  const [username, setUsername] = useState("Usuario");
-  const [inputValue, setInputValue] = useState("");
+  const [color, setColor] = useState("bg-red-200");
 
-  const handleChange = (event) => {
-    setInputValue(event.target.value);
+  const getRandomColor = () => {
+    const colors = [ 
+      "bg-green-200", 
+      "bg-blue-200", 
+      "bg-yellow-200",
+      "bg-purple-200", 
+      "bg-pink-200", 
+      "bg-gray-200", 
+      "bg-orange-200",
+      "bg-indigo-200",
+    ];
+    return colors[Math.floor(Math.random() * colors.length)];
   };
 
-  const handleGreet = () => {
-    setUsername(inputValue);
-    setInputValue("");
+  const handleChangeColor = () => {
+    setColor(getRandomColor());
   };
 
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center">
-      <h1>Bienvenido {username}</h1>
-      <input
-        type="text"
-        placeholder="Ingrese su nombre"
-        value={inputValue}
-        onChange={handleChange}
-        className="text-center mt-6 border p-2 rounded"
-      />
-      <button
-        onClick={handleGreet}
-        className="w-20 px-4 py-2 mt-6 bg-amber-500 text-white font-semibold rounded-lg shadow-md hover:bg-amber-600 transition-colors duration-300 cursor-pointer"
+    <>
+      <div className={`w-[500px] h-[500px] mt-10 ${color}`}></div>
+      <h3>El color que hay es: {color}</h3>
+      <button 
+        className="bg-blue-500 text-white px-4 py-2 mt-7 rounded" 
+        onClick={handleChangeColor}
       >
-        Saludar
+        Cambiar Color
       </button>
-    </div>
+    </>
   );
 };
